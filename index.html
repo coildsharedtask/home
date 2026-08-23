@@ -1,256 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My GitHub Page</title>
-    <meta name="description" content="My personal GitHub Pages website">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f7fa;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #24292f;
-            color: white;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h2 {
-            font-size: 24px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #555;
-            max-width: 650px;
-            margin-bottom: 25px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #24292f;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
-        .button:hover {
-            background-color: #444c56;
-        }
-
-        section {
-            padding: 60px 10%;
-        }
-
-        section h2 {
-            margin-bottom: 20px;
-            font-size: 32px;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .project-card h3 {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background-color: #24292f;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            nav a {
-                margin: 0 8px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COILD-INDIC-MT — ICON 2026 Shared Task on Direct Indic-to-Indic Machine Translation</title>
+<meta name="description" content="COILD-INDIC-MT: a shared task at ICON 2026 on direct, non-pivoted machine translation between six Indian language pairs — Assamese–Bodo, Kannada–Malayalam, Bengali–Odia, Gujarati–Marathi, Dogri–Punjabi, and Urdu–Sindhi.">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <h2>My Portfolio</h2>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-brand">
+      <img src="logo.jpg" alt="COIL-D logo" class="brand-logo">
+      <span class="brand-text">COILD<span class="brand-accent">-INDIC-MT</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#directions">Task</a></li>
+      <li><a href="#dataset">Dataset</a></li>
+      <li><a href="#submission">Submission</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#organizers">Organizers</a></li>
+      <li><a href="#register" class="nav-cta">Register</a></li>
+    </ul>
+  </div>
+</nav>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="badge"><span class="dot"></span> ICON 2026 · Shared Task</span>
+      <span class="badge badge-outline">A COIL-D Project Initiative</span>
+    </div>
 
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>Hello, I'm Your Name 👋</h1>
-
-        <p>
-            I'm a researcher and developer interested in Artificial Intelligence,
-            Machine Learning, Natural Language Processing, and Speech Technologies.
-        </p>
-
-        <a
-            class="button"
-            href="https://github.com/YOUR_USERNAME"
-            target="_blank"
-        >
-            View My GitHub
-        </a>
-    </section>
-
-
-    <!-- About -->
-    <section id="about">
-        <h2>About Me</h2>
-
-        <p>
-            Welcome to my personal website. I use this page to showcase my
-            research, projects, publications, and other technical work.
-        </p>
-    </section>
-
-
-    <!-- Projects -->
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="projects">
-
-            <div class="project-card">
-                <h3>Project One</h3>
-
-                <p>
-                    A short description of your first project.
-                </p>
-
-                <a href="https://github.com/YOUR_USERNAME/project-one">
-                    View Project
-                </a>
-            </div>
-
-
-            <div class="project-card">
-                <h3>Project Two</h3>
-
-                <p>
-                    A short description of your second project.
-                </p>
-
-                <a href="https://github.com/YOUR_USERNAME/project-two">
-                    View Project
-                </a>
-            </div>
-
-
-            <div class="project-card">
-                <h3>Project Three</h3>
-
-                <p>
-                    A short description of your third project.
-                </p>
-
-                <a href="https://github.com/YOUR_USERNAME/project-three">
-                    View Project
-                </a>
-            </div>
-
+    <div class="hero-grid">
+      <div>
+        <h1>Translate Indian languages <em>directly</em> into Indian languages.</h1>
+        <p class="hero-sub">COILD-INDIC-MT is a shared task on <strong>direct, non-pivoted machine translation</strong> between neighbouring Indian languages — no English or Hindi leg anywhere in the pipeline. Six directions, three language families, seven writing systems.</p>
+        <div class="hero-actions">
+          <a href="#register" class="btn btn-gold">Register your team →</a>
+          <a href="#directions" class="btn btn-outline">See the language pairs</a>
         </div>
-    </section>
+        <div class="hero-stats">
+          <div class="stat"><span class="n">6</span><span class="l">Translation directions</span></div>
+          <div class="stat"><span class="n">12</span><span class="l">Languages covered</span></div>
+          <div class="stat"><span class="n">~30K</span><span class="l">Parallel pairs per direction</span></div>
+          <div class="stat"><span class="n">20–50</span><span class="l">Teams expected</span></div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-label">Bidirectional pairs</div>
+        <ul class="pair-chip-list">
+          <li class="pair-chip">Assamese ↔ Bodo</li>
+          <li class="pair-chip">Kannada ↔ Malayalam</li>
+          <li class="pair-chip">Bengali ↔ Odia</li>
+          <li class="pair-chip">Gujarati ↔ Marathi</li>
+          <li class="pair-chip">Dogri ↔ Punjabi</li>
+          <li class="pair-chip">Urdu ↔ Sindhi</li>
+        </ul>
+        <div class="panel-caption">Indo-Aryan · Dravidian · Tibeto-Burman</div>
+      </div>
+    </div>
+  </div>
+</header>
 
+<main>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Contact</h2>
+  <!-- OVERVIEW / MOTIVATION -->
+  <section id="overview">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Motivation</span>
+        <h2>Pivoting through English loses what makes these languages distinct.</h2>
+        <p>Machine translation between Indian languages is, in practice, almost never <em>between</em> Indian languages. Where an Indic–Indic direction is supported at all, it is typically realised by pivoting through English or Hindi — lossy in exactly the places neighbouring Indian languages are rich: honorific agreement, classifier constructions, kinship terminology, and case and converb morphology. It also discards genuine areal proximity, and makes translation for a Bodo or Dogri speaker contingent on the state of English resources.</p>
+      </div>
 
-        <p>
-            Email:
-            <a href="mailto:your.email@example.com">
-                your.email@example.com
-            </a>
-        </p>
+      <div class="overview-grid">
+        <div class="ov-card">
+          <h3>Why COIL-D</h3>
+          <p>The COIL-D (Centre of Indian Language Data) project builds a unified repository of Indian language resources, sets benchmarking standards, and advances Machine Translation and NLP technologies for Human Language Technology applications. COILD-INDIC-MT is COIL-D's shared task focused exclusively on <strong>direct, non-pivoted translation</strong> between regional Indian languages.</p>
+        </div>
+        <div class="ov-card">
+          <h3>A deliberately varied set</h3>
+          <p>Rather than maximising language count, each pair isolates a different relationship: a cross-family pair convergent through contact (Assamese–Bodo); within-family pairs at differing degrees of relatedness (Bengali–Odia, Gujarati–Marathi, Kannada–Malayalam); a pair with an extremely low-resource source (Dogri–Punjabi); and a pair sharing a script family but diverging lexically (Urdu–Sindhi).</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <p>
-            GitHub:
-            <a
-                href="https://github.com/YOUR_USERNAME"
-                target="_blank"
-            >
-                github.com/YOUR_USERNAME
-            </a>
-        </p>
-    </section>
+  <!--TASK / DIRECTIONS -->
+  <section id="directions" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Shared task</span>
+        <h2>Six directions, twelve languages</h2>
+        <p>All twelve languages are listed in the Eighth Schedule of the Constitution of India. Participants may enter any subset of the six directions — each is bidirectional.</p>
+      </div>
 
+      <div class="table-scroll">
+        <table class="pairs-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Bidirectional pair</th>
+              <th>Family (src ↔ tgt)</th>
+              <th>Script (src ↔ tgt)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Assamese ↔ Bodo</td><td>Indo-Aryan ↔ Tibeto-Burman</td><td>Bengali–Assamese ↔ Devanagari</td></tr>
+            <tr><td>2</td><td>Kannada ↔ Malayalam</td><td>Dravidian ↔ Dravidian</td><td>Kannada ↔ Malayalam</td></tr>
+            <tr><td>3</td><td>Bengali ↔ Odia</td><td>Indo-Aryan ↔ Indo-Aryan</td><td>Bengali ↔ Odia</td></tr>
+            <tr><td>4</td><td>Gujarati ↔ Marathi</td><td>Indo-Aryan ↔ Indo-Aryan</td><td>Gujarati ↔ Devanagari</td></tr>
+            <tr><td>5</td><td>Dogri ↔ Punjabi</td><td>Indo-Aryan ↔ Indo-Aryan</td><td>Devanagari ↔ Gurmukhi</td></tr>
+            <tr><td>6</td><td>Urdu ↔ Sindhi</td><td>Indo-Aryan ↔ Indo-Aryan</td><td>Perso-Arabic ↔ Perso-Arabic</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>
-            © 2026 Your Name. Built with HTML and hosted on GitHub Pages.
-        </p>
-    </footer>
+      <div class="objectives">
+        <h3>Objectives</h3>
+        <ul class="obj-list">
+          <li>Facilitate effective communication across India's diverse linguistic communities through direct machine translation, without relying on a pivot language.</li>
+          <li>Encourage multilingual and transfer learning across the community of Indian languages.</li>
+          <li>Provide a curated, high-quality multilingual parallel corpus to the community.</li>
+          <li>Help neighbouring communities communicate directly using machine translation.</li>
+          <li>Advance systems that preserve the linguistic and cultural diversity of close communities.</li>
+          <li>Establish a common evaluation platform for Indic-centric multilingual MT.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
+  <!-- DATASET -->
+  <section id="dataset">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The corpus</span>
+        <h2>~30,000 parallel sentences per direction</h2>
+        <p>COILD-INDIC-MT provides a carefully curated, high-quality parallel corpus covering all six participating language pairs. Training and development data are released to registered participants; the blind test set (source-side only) is released separately during the evaluation window and remains hidden until then.</p>
+      </div>
+
+      <div class="stats-panel">
+        <div>
+          <h4 class="panel-h">Corpus splits — per language pair</h4>
+          <div class="split-row"><span>Training set</span><b>28,000</b></div>
+          <div class="split-row"><span>Development set</span><b>1,000</b></div>
+          <div class="split-row"><span>Practice test set</span><b>1,000</b></div>
+          <div class="split-row total"><span>Total per pair</span><b>~30,000</b></div>
+        </div>
+        <div>
+          <h4 class="panel-h">Across all six directions</h4>
+          <div class="split-row"><span>Training set</span><b>168,000</b></div>
+          <div class="split-row"><span>Development set</span><b>6,000</b></div>
+          <div class="split-row"><span>Practice test set</span><b>6,000</b></div>
+          <div class="split-row total"><span>Total corpus</span><b>~180,000</b></div>
+        </div>
+      </div>
+
+      <div class="note-card">
+        <strong>Access policy.</strong> The complete dataset (training, development, and practice test sets) is released only to registered participants. Access to the official blind test set is also restricted to registered teams, who must complete registration and agree to the dataset usage policy before obtaining access.
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBMISSION -->
+  <section id="submission" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Participation</span>
+        <h2>Two submission tracks</h2>
+        <p>Each participating team must submit at least one system to be eligible for submitting a system description paper. Teams may enter any subset of the six directions.</p>
+      </div>
+
+      <div class="tasks-grid">
+        <div class="task-card a">
+          <span class="task-kicker">Track 1</span>
+          <h3>Primary (Constrained)</h3>
+          <p>Systems must be trained using only the datasets released by the organizers.</p>
+          <p class="track-limit">Up to <strong>3 runs</strong> per language pair, with one run designated as the <strong>primary submission</strong>.</p>
+        </div>
+        <div class="task-card b">
+          <span class="task-kicker">Track 2</span>
+          <h3>Open (Unconstrained)</h3>
+          <p>Systems may utilize additional publicly available datasets or external resources.</p>
+          <p class="track-limit">Up to <strong>3 runs</strong> per language pair, with one run designated as the <strong>primary submission</strong>.</p>
+        </div>
+      </div>
+      <p class="fine-print">All submissions must comply with the shared task guidelines and data usage policy specified by the organizers.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Timeline</span>
+        <h2>Key dates</h2>
+        <p>The gold marker tracks today's position on the line automatically, based on your device's date. All deadlines are 23:59 AoE (Anywhere on Earth) unless noted otherwise.</p>
+      </div>
+
+      <div class="timeline" id="timeline-track">
+        <div class="tl-line"></div>
+        <div class="tl-progress" id="tl-progress"></div>
+        <div class="tl-item" data-date="2026-08-22">
+          <div class="tl-date">22 Aug 2026</div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-body"><h4>Shared task webpage goes live &amp; registrations start</h4></div>
+        </div>
+        <div class="tl-item" data-date="2026-08-25">
+          <div class="tl-date">25 Aug 2026</div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-body"><h4>Training set released <span class="tl-note">(registered participants only)</span></h4></div>
+        </div>
+        <div class="tl-item" data-date="2026-10-10">
+          <div class="tl-date">10 Oct 2026</div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-body"><h4>Evaluation (test) set released <span class="tl-note">(registration closes)</span></h4></div>
+        </div>
+        <div class="tl-item" data-date="2026-10-13">
+          <div class="tl-date">13 Oct 2026</div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-body"><h4>Final date for run submissions</h4></div>
+        </div>
+        <div class="tl-item" data-date="2026-10-20">
+          <div class="tl-date">20 Oct 2026</div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-body"><h4>Task results and rankings published</h4></div>
+        </div>
+        <div class="tl-item" data-date="2026-11-05">
+          <div class="tl-date">05 Nov 2026</div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-body"><h4>Participant system papers due</h4></div>
+        </div>
+        <div class="tl-item" data-date="2026-11-15">
+          <div class="tl-date">15 Nov 2026</div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-body"><h4>Acceptance decisions communicated</h4></div>
+        </div>
+        <div class="tl-item" data-date="2026-11-25">
+          <div class="tl-date">25 Nov 2026</div>
+          <div class="tl-dot-col"><div class="tl-dot"></div></div>
+          <div class="tl-body"><h4>Camera-ready working notes</h4></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REGISTER ============ -->
+  <section id="register" class="alt">
+    <div class="wrap">
+      <div class="join">
+        <div class="join-grid">
+          <div>
+            <span class="eyebrow" style="color:var(--gold-300);">Get involved</span>
+            <h2>Register your team</h2>
+            <p>Registration is open as of 22 August 2026. Registered teams get access to the training and development data, and later the blind test set.</p>
+            <div class="join-actions">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdj04QP_yK-jv7dqwqlaHTvaGhPQOyCbKN_ccsT8JjdWNSnIQ/viewform" class="btn btn-gold" aria-disabled="false" title="Registration form link">Registration form </a>
+            </div>
+            <p class="fine-print" style="margin-top:14px;">The registration link will be added here as soon as it's live — check back, or watch this page.</p>
+          </div>
+          <div class="join-steps">
+            <div class="join-step">
+              <span class="num">1</span>
+              <div><p>Register your team</p><span>Registration form link will appear on this page.</span></div>
+            </div>
+            <div class="join-step">
+              <span class="num">2</span>
+              <div><p>Agree to the data usage policy</p><span>Required before training/development data access is granted.</span></div>
+            </div>
+            <div class="join-step">
+              <span class="num">3</span>
+              <div><p>Get training data (25 Aug 2026)</p><span>Development and practice test sets released alongside it.</span></div>
+            </div>
+            <div class="join-step">
+              <span class="num">4</span>
+              <div><p>Submit runs by 13 Oct 2026</p><span>Up to 3 runs per direction, per track — one marked primary.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORGANIZERS -->
+  <section id="organizers">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Organizing committee</span>
+        <h2>Organizers</h2>
+      </div>
+
+      <div class="org-grid">
+        <div class="org-card">
+          <h4>Kshetrimayum Boynao Singh</h4>
+          <div class="aff">IIT Patna, India</div>
+          <p class="org-note">NLP; organized shared tasks at EMNLP–WMT and AACL-IJCNLP–JustNLP.</p>
+        </div>
+        <div class="org-card">
+          <h4>Deepak Kumar</h4>
+          <div class="aff">IIT Patna, India</div>
+          <p class="org-note">Automatic speech recognition and text-to-speech.</p>
+        </div>
+        <div class="org-card">
+          <h4>Avinash Kumar</h4>
+          <div class="aff">IIT Patna, India</div>
+          <p class="org-note">Reasoning-based machine translation.</p>
+        </div>
+        <div class="org-card">
+          <h4>Nitin Kumar Mishra</h4>
+          <div class="aff">IIT Delhi, India</div>
+          <p class="org-note">Machine translation, multilingual NLP, and large language models.</p>
+        </div>
+        <div class="org-card">
+          <h4>Palash Pratim Dutta</h4>
+          <div class="aff">IIT Guwahati, India</div>
+          <p class="org-note">MT for low-resource languages, LLMs, sentiment analysis.</p>
+        </div>
+        <div class="org-card">
+          <h4>Ashwini Vaidya</h4>
+          <div class="aff">IIT Delhi, India</div>
+          <p class="org-note">Computational linguistics and Indian languages; organizer, CHiPSAL workshop, COLING 2025.</p>
+        </div>
+        <div class="org-card">
+          <h4>Sanasam Ranbir Singh</h4>
+          <div class="aff">IIT Guwahati, India</div>
+          <p class="org-note">IR &amp; extraction, web mining, social computing, multilingual NLP.</p>
+        </div>
+        <div class="org-card">
+          <h4>Samit Bhattacharya</h4>
+          <div class="aff">IIT Guwahati, India</div>
+          <p class="org-note">NLP, AI, human-computer interaction, and extended reality.</p>
+        </div>
+        <div class="org-card">
+          <h4>Shad Akhtar</h4>
+          <div class="aff">IIIT Delhi, India</div>
+          <p class="org-note">NLP; editor, ICON 2022 proceedings; organizer, SemEval 2024 and shared tasks at ICON, NAACL, ACL.</p>
+        </div>
+        <div class="org-card">
+          <h4>Poonam Bansal</h4>
+          <div class="aff">IGDTUW, Delhi, India</div>
+          <p class="org-note">Speech technology, pattern recognition, NLP.</p>
+        </div>
+        <div class="org-card">
+          <h4>Muralikrishna SN</h4>
+          <div class="aff">MIT, Manipal, India</div>
+          <p class="org-note">Computer vision, pattern recognition, NLP.</p>
+        </div>
+        <div class="org-card">
+          <h4>Tanmoy Chakraborty</h4>
+          <div class="aff">IIT Delhi, India</div>
+          <p class="org-note">NLP, LLMs, computational social science; editor, EMNLP 2025 / ICON 2022 / IJCNLP-AACL 2025 proceedings.</p>
+        </div>
+        <div class="org-card">
+          <h4>Asif Ekbal</h4>
+          <div class="aff">IIT Patna, India</div>
+          <p class="org-note">AI, NLP, low-resource MT, sentiment &amp; emotion analysis, LLM safety; Senior/Area Chair at AAAI, EMNLP, ACL, IJCAI, NAACL, EACL.</p>
+        </div>
+      </div>
+
+      <div class="contact-strip">
+        <div class="contact-question">Questions about the task?</div>
+        <div class="contact-links">
+          <span class="contact-tag">Contact</span>
+          <span class="contact-pending">coildsharedtaskinfo@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="logo.jpg" alt="COIL-D logo" class="brand-logo footer-logo"> COILD-INDIC-MT</div>
+        <p class="fine">A shared task at ICON 2026 on direct, non-pivoted Indic-to-Indic machine translation, part of the COIL-D (Centre of Indian Language Data) project. See the official ICON 2026 conference site for venue, program, and submission portal details.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#overview">Overview</a>
+        <a href="#directions">Task</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#register">Register</a>
+      </div>
+    </div>
+    <div class="footer-note">© 2026 COILD-INDIC-MT organizing committee · Registration, data access, and evaluation details are managed on this page and updated as milestones are reached.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
