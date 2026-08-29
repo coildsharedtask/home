@@ -34,24 +34,19 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="hero-top">
-      <span class="badge"><span class="dot"></span> ICON 2026 · Shared Task</span>
-      <span class="badge badge-outline">A COIL-D Project Initiative</span>
-    </div>
-
     <div class="hero-grid">
       <div>
+        <div class="hero-top">
+          <span class="badge"><span class="dot"></span> ICON 2026 · Shared Task</span>
+          <a href="https://coild-bhashini.github.io/" class="badge-link">
+            <span class="badge badge-outline">A COIL-D Project Initiative</span>
+          </a>
+        </div>
         <h1>Translate Indian languages <em>directly</em> into Indian languages.</h1>
-        <p class="hero-sub">COILD-INDIC-MT is a shared task on <strong>direct, non-pivoted machine translation</strong> between neighbouring Indian languages — no English or Hindi leg anywhere in the pipeline. Six directions, three language families, seven writing systems.</p>
+        <p class="hero-sub">COILD-INDIC-MT is a shared task on <strong>direct, non-pivoted machine translation</strong> between neighbouring Indian languages — no English or Hindi leg anywhere in the pipeline. 12 translation directions, three language families, seven writing systems.</p>
         <div class="hero-actions">
           <a href="#register" class="btn btn-gold">Register your team →</a>
           <a href="#directions" class="btn btn-outline">See the language pairs</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="n">6</span><span class="l">Translation directions</span></div>
-          <div class="stat"><span class="n">12</span><span class="l">Languages covered</span></div>
-          <div class="stat"><span class="n">~30K</span><span class="l">Parallel pairs per direction</span></div>
-          <div class="stat"><span class="n">20–50</span><span class="l">Teams expected</span></div>
         </div>
       </div>
       <div class="hero-panel">
@@ -99,8 +94,8 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Shared task</span>
-        <h2>Six directions, twelve languages</h2>
-        <p>All twelve languages are listed in the Eighth Schedule of the Constitution of India. Participants may enter any subset of the six directions — each is bidirectional.</p>
+        <h2>12 directions, twelve languages</h2>
+        <p>All twelve languages are listed in the Eighth Schedule of the Constitution of India. Participants may enter any subset of the six bidirectional language pairs.</p>
       </div>
 
       <div class="table-scroll">
@@ -156,7 +151,7 @@
           <div class="split-row total"><span>Total per pair</span><b>~30,000</b></div>
         </div>
         <div>
-          <h4 class="panel-h">Across all six directions</h4>
+          <h4 class="panel-h">Across all six language pairs</h4>
           <div class="split-row"><span>Training set</span><b>168,000</b></div>
           <div class="split-row"><span>Development set</span><b>6,000</b></div>
           <div class="split-row"><span>Practice test set</span><b>6,000</b></div>
@@ -167,6 +162,11 @@
       <div class="note-card">
         <strong>Access policy.</strong> The complete dataset (training, development, and practice test sets) is released only to registered participants. Access to the official blind test set is also restricted to registered teams, who must complete registration and agree to the dataset usage policy before obtaining access.
       </div>
+
+      <!-- TODO: replace href="#" with the live Hugging Face dataset request URL once available -->
+      <div class="note-card" style="margin-top:16px;">
+        <strong>Requesting the dataset.</strong> Once registered, the training, development, and practice test sets are distributed via a Hugging Face dataset request. <a href="#" class="hf-link">Request access on Hugging Face — coming soon →</a> Use the same email address you registered with — only the team lead may submit the request, on behalf of the whole team.
+      </div>
     </div>
   </section>
 
@@ -176,7 +176,7 @@
       <div class="section-head">
         <span class="eyebrow">Participation</span>
         <h2>Two submission tracks</h2>
-        <p>Each participating team must submit at least one system to be eligible for submitting a system description paper. Teams may enter any subset of the six directions.</p>
+        <p>Each participating team must submit at least one system to be eligible for submitting a system description paper. Teams may enter any subset of the six language pairs.</p>
       </div>
 
       <div class="tasks-grid">
@@ -298,71 +298,98 @@
         <h2>Organizers</h2>
       </div>
 
+      <!-- TODO: replace each href="#" below with the organizer's personal/homepage URL -->
       <div class="org-grid">
         <div class="org-card">
-          <h4>Kshetrimayum Boynao Singh</h4>
+          <div class="org-photo-wrap" data-initials="KS">
+            <img class="org-photo" src="images/kshetrimayum.png" alt="Kshetrimayum Boynao Singh" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Kshetrimayum Boynao Singh</a></h4>
           <div class="aff">IIT Patna, India</div>
-          <p class="org-note">NLP; organized shared tasks at EMNLP–WMT and AACL-IJCNLP–JustNLP.</p>
         </div>
         <div class="org-card">
-          <h4>Deepak Kumar</h4>
+          <div class="org-photo-wrap" data-initials="DK">
+            <img class="org-photo" src="images/deepak.png" alt="Deepak Kumar" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="https://www.linkedin.com/in/deepak-kumar-29b700171/">Deepak Kumar</a></h4>
           <div class="aff">IIT Patna, India</div>
-          <p class="org-note">Automatic speech recognition and text-to-speech.</p>
         </div>
         <div class="org-card">
-          <h4>Avinash Kumar</h4>
+          <div class="org-photo-wrap" data-initials="AK">
+            <img class="org-photo" src="images/avinash.png" alt="Avinash Kumar" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Avinash Kumar</a></h4>
           <div class="aff">IIT Patna, India</div>
-          <p class="org-note">Reasoning-based machine translation.</p>
         </div>
         <div class="org-card">
-          <h4>Nitin Kumar Mishra</h4>
+          <div class="org-photo-wrap" data-initials="NM">
+            <img class="org-photo" src="images/nitin.png" alt="Nitin Kumar Mishra" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Nitin Kumar Mishra</a></h4>
           <div class="aff">IIT Delhi, India</div>
-          <p class="org-note">Machine translation, multilingual NLP, and large language models.</p>
         </div>
         <div class="org-card">
-          <h4>Palash Pratim Dutta</h4>
+          <div class="org-photo-wrap" data-initials="PD">
+            <img class="org-photo" src="images/palash.png" alt="Palash Pratim Dutta" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Palash Pratim Dutta</a></h4>
           <div class="aff">IIT Guwahati, India</div>
-          <p class="org-note">MT for low-resource languages, LLMs, sentiment analysis.</p>
         </div>
         <div class="org-card">
-          <h4>Ashwini Vaidya</h4>
+          <div class="org-photo-wrap" data-initials="AV">
+            <img class="org-photo" src="images/ashwini.png" alt="Ashwini Vaidya" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Ashwini Vaidya</a></h4>
           <div class="aff">IIT Delhi, India</div>
-          <p class="org-note">Computational linguistics and Indian languages; organizer, CHiPSAL workshop, COLING 2025.</p>
         </div>
         <div class="org-card">
-          <h4>Sanasam Ranbir Singh</h4>
+          <div class="org-photo-wrap" data-initials="SS">
+            <img class="org-photo" src="images/sanasam.png" alt="Sanasam Ranbir Singh" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Sanasam Ranbir Singh</a></h4>
           <div class="aff">IIT Guwahati, India</div>
-          <p class="org-note">IR &amp; extraction, web mining, social computing, multilingual NLP.</p>
         </div>
         <div class="org-card">
-          <h4>Samit Bhattacharya</h4>
+          <div class="org-photo-wrap" data-initials="SB">
+            <img class="org-photo" src="images/samit.png" alt="Samit Bhattacharya" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Samit Bhattacharya</a></h4>
           <div class="aff">IIT Guwahati, India</div>
-          <p class="org-note">NLP, AI, human-computer interaction, and extended reality.</p>
         </div>
         <div class="org-card">
-          <h4>Shad Akhtar</h4>
+          <div class="org-photo-wrap" data-initials="SA">
+            <img class="org-photo" src="images/shad.png" alt="Shad Akhtar" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Shad Akhtar</a></h4>
           <div class="aff">IIIT Delhi, India</div>
-          <p class="org-note">NLP; editor, ICON 2022 proceedings; organizer, SemEval 2024 and shared tasks at ICON, NAACL, ACL.</p>
         </div>
         <div class="org-card">
-          <h4>Poonam Bansal</h4>
+          <div class="org-photo-wrap" data-initials="PB">
+            <img class="org-photo" src="images/poonam.png" alt="Poonam Bansal" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Poonam Bansal</a></h4>
           <div class="aff">IGDTUW, Delhi, India</div>
-          <p class="org-note">Speech technology, pattern recognition, NLP.</p>
         </div>
         <div class="org-card">
-          <h4>Muralikrishna SN</h4>
+          <div class="org-photo-wrap" data-initials="MS">
+            <img class="org-photo" src="images/murali.png" alt="Muralikrishna SN" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Muralikrishna SN</a></h4>
           <div class="aff">MIT, Manipal, India</div>
-          <p class="org-note">Computer vision, pattern recognition, NLP.</p>
         </div>
         <div class="org-card">
-          <h4>Tanmoy Chakraborty</h4>
+          <div class="org-photo-wrap" data-initials="TC">
+            <img class="org-photo" src="images/tanmoy.png" alt="Tanmoy Chakraborty" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Tanmoy Chakraborty</a></h4>
           <div class="aff">IIT Delhi, India</div>
-          <p class="org-note">NLP, LLMs, computational social science; editor, EMNLP 2025 / ICON 2022 / IJCNLP-AACL 2025 proceedings.</p>
         </div>
         <div class="org-card">
-          <h4>Asif Ekbal</h4>
+          <div class="org-photo-wrap" data-initials="AE">
+            <img class="org-photo" src="images/asif.png" alt="Asif Ekbal" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+          </div>
+          <h4><a href="#">Asif Ekbal</a></h4>
           <div class="aff">IIT Patna, India</div>
-          <p class="org-note">AI, NLP, low-resource MT, sentiment &amp; emotion analysis, LLM safety; Senior/Area Chair at AAAI, EMNLP, ACL, IJCAI, NAACL, EACL.</p>
         </div>
       </div>
 
