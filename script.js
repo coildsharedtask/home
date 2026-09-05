@@ -36,23 +36,33 @@ if (navToggle && navLinks) {
     }
   });
 
+  // If "today" lands exactly on a milestone's date, tag that row in place
+  // instead of drawing a separate floating marker at the same spot —
+  // otherwise the floating pill sits right on top of the row's own text.
+  const isToday = nextIdx !== -1 && dates[nextIdx].getTime() === todayTime;
+
   if (nextIdx !== -1) {
     const nextItem = items[nextIdx];
     nextItem.classList.add('next');
+    if (isToday) nextItem.classList.add('is-today');
     const h4 = nextItem.querySelector('h4');
     const pill = document.createElement('span');
     pill.className = 'tl-pill';
-    pill.textContent = 'Up next';
+    pill.textContent = isToday ? 'Today' : 'Up next';
     h4.appendChild(pill);
   }
 
-  const nowDot = document.createElement('div');
-  nowDot.className = 'tl-now-dot';
-  const nowLabel = document.createElement('div');
-  nowLabel.className = 'tl-now-label';
-  nowLabel.textContent = 'Today · ' + today.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  track.appendChild(nowDot);
-  track.appendChild(nowLabel);
+  let nowDot = null;
+  let nowLabel = null;
+  if (!isToday) {
+    nowDot = document.createElement('div');
+    nowDot.className = 'tl-now-dot';
+    nowLabel = document.createElement('div');
+    nowLabel.className = 'tl-now-label';
+    nowLabel.textContent = 'Today · ' + today.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    track.appendChild(nowDot);
+    track.appendChild(nowLabel);
+  }
 
   requestAnimationFrame(() => {
     const trackTop = track.getBoundingClientRect().top;
@@ -65,6 +75,8 @@ if (navToggle && navLinks) {
     let fillPx;
     if (nextIdx === -1) {
       fillPx = dotCenters[dotCenters.length - 1];
+    } else if (isToday) {
+      fillPx = dotCenters[nextIdx];
     } else if (lastDoneIdx === -1) {
       fillPx = 0;
     } else {
@@ -77,7 +89,7 @@ if (navToggle && navLinks) {
     }
 
     progress.style.height = fillPx + 'px';
-    nowDot.style.top = fillPx + 'px';
-    nowLabel.style.top = fillPx + 'px';
+    if (nowDot) nowDot.style.top = fillPx + 'px';
+    if (nowLabel) nowLabel.style.top = fillPx + 'px';
   });
 })();
