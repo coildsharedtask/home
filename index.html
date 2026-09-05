@@ -198,32 +198,38 @@
           <div>
             <h4 class="panel-h">Corpus splits — per language pair</h4>
             <div class="split-row"><span>Training set</span><b>28,000</b></div>
-            <div class="split-row"><span>Development set</span><b>1,000</b></div>
-            <div class="split-row"><span>Practice test set</span><b>1,000</b></div>
+            <div class="split-row"><span>Test set 1</span><b>1,000</b></div>
+            <div class="split-row"><span>Test set 2</span><b>1,000</b></div>
             <div class="split-row total"><span>Total per pair</span><b>~30,000</b></div>
           </div>
           <div>
             <h4 class="panel-h">Across all six language pairs</h4>
             <div class="split-row"><span>Training set</span><b>168,000</b></div>
-            <div class="split-row"><span>Development set</span><b>6,000</b></div>
-            <div class="split-row"><span>Practice test set</span><b>6,000</b></div>
+            <div class="split-row"><span>Test set 1</span><b>6,000</b></div>
+            <div class="split-row"><span>Test set 2</span><b>6,000</b></div>
             <div class="split-row total"><span>Total corpus</span><b>~180,000</b></div>
           </div>
         </div>
 
         <div class="note-card">
-          <strong>Access policy.</strong> The complete dataset (training, development, and practice test sets) is
+          <strong>Access policy.</strong> The complete dataset (training and practice test sets) is
           released only to registered participants. Access to the official blind test set is also restricted to
           registered teams, who must complete registration and agree to the dataset usage policy before obtaining
           access.
         </div>
 
-        <!-- TODO: replace href="#" with the live Hugging Face dataset request URL once available -->
-        <div class="note-card" style="margin-top:16px;">
-          <strong>Requesting the dataset.</strong> Once registered, the training, development, and practice test sets
-          are distributed via a Hugging Face dataset request. <a href="#" class="hf-link">Request access on Hugging Face
-            — coming soon →</a> Use the same email address you registered with — only the team lead may submit the
-          request, on behalf of the whole team.
+        <div class="note-card hf-request-card">
+          <strong>Requesting the dataset.</strong> Once registered, the training and practice test sets
+          are distributed per language pair via a Hugging Face dataset request. Click a pair below to request access:
+          <ul class="hf-pair-list">
+            <li><a href="https://huggingface.co/datasets/ainlpml-iitp/ICON26-COILD-INDIC-MT-Assamese-Bodo" class="hf-link" target="_blank" rel="noopener">Assamese ↔ Bodo ↗</a></li>
+            <li><a href="https://huggingface.co/datasets/ainlpml-iitp/ICON26-COILD-INDIC-MT-Kannada-Malayalam" class="hf-link" target="_blank" rel="noopener">Kannada ↔ Malayalam ↗</a></li>
+            <li><a href="https://huggingface.co/datasets/ainlpml-iitp/ICON26-COILD-INDIC-MT-Bengali-Odia" class="hf-link" target="_blank" rel="noopener">Bengali ↔ Odia ↗</a></li>
+            <li><a href="https://huggingface.co/datasets/ainlpml-iitp/ICON26-COILD-INDIC-MT-Gujarati-Marathi" class="hf-link" target="_blank" rel="noopener">Gujarati ↔ Marathi ↗</a></li>
+            <li><a href="https://huggingface.co/datasets/ainlpml-iitp/ICON26-COILD-INDIC-MT-Dogri-Punjabi" class="hf-link" target="_blank" rel="noopener">Dogri ↔ Punjabi ↗</a></li>
+            <li><a href="https://huggingface.co/datasets/ainlpml-iitp/ICON26-COILD-INDIC-MT-Urdu-Sindhi" class="hf-link" target="_blank" rel="noopener">Urdu ↔ Sindhi ↗</a></li>
+          </ul>
+          <p class="hf-request-note">Use the same email address you registered with — only the team lead may submit the request, on behalf of the whole team.</p>
         </div>
       </div>
     </section>
