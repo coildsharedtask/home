@@ -421,15 +421,44 @@ section.tight { padding: 56px 0; }
 
 .note-card strong { color: var(--navy-900); }
 
-.hf-link {
-  display: inline-block;
-  font-weight: 600;
-  color: var(--gold-600);
-  text-decoration: none;
-  margin: 0 2px;
+.hf-request-card { padding-bottom: 20px; }
+
+.hf-pair-list {
+  list-style: none;
+  margin: 14px 0 16px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-.hf-link:hover { text-decoration: underline; }
+.hf-link {
+  display: block;
+  text-align: center;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy-800);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.hf-link:hover {
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--gold-300);
+}
+
+.hf-request-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
 
 /* ===== Submission tasks ===== */
 .tasks-grid {
@@ -793,6 +822,7 @@ footer {
   .nav-links.open { display: flex; }
   .nav-cta { align-self: flex-start; }
   .org-grid { grid-template-columns: 1fr; }
+  .hf-pair-list { grid-template-columns: 1fr 1fr; }
   .tl-date { width: 82px; font-size: 0.74rem; }
   .tl-line, .tl-progress { left: 102px; }
   .tl-now-dot { left: 96px; }
