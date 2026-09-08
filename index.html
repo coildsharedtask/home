@@ -190,36 +190,37 @@
           <span class="eyebrow">The corpus</span>
           <h2>~30,000 parallel sentences per direction</h2>
           <p>COILD-INDIC-MT provides a carefully curated, high-quality parallel corpus covering all six participating
-            language pairs. Training and development data are released to registered participants; the blind test set
-            (source-side only) is released separately during the evaluation window and remains hidden until then.</p>
+            language pairs. The training set is released in full; the development and test sets are released with
+            source-side sentences only — their target references stay hidden, used respectively for validation/tuning
+            and final evaluation.</p>
         </div>
 
         <div class="stats-panel">
           <div>
             <h4 class="panel-h">Corpus splits — per language pair</h4>
             <div class="split-row"><span>Training set</span><b>28,000</b></div>
-            <div class="split-row"><span>Test set 1</span><b>1,000</b></div>
-            <div class="split-row"><span>Test set 2</span><b>1,000</b></div>
+            <div class="split-row" style="align-items:flex-start;"><span>Development set <span class="tl-pill" style="margin-left:6px;">Hidden</span><br><span style="display:block;font-weight:400;font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:4px;">Source given, target hidden — used for validation &amp; tuning.</span></span><b>1,000</b></div>
+            <div class="split-row" style="align-items:flex-start;"><span>Test set <span class="tl-pill" style="margin-left:6px;">Hidden</span><br><span style="display:block;font-weight:400;font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:4px;">Source given, target hidden — used for final evaluation.</span></span><b>1,000</b></div>
             <div class="split-row total"><span>Total per pair</span><b>~30,000</b></div>
           </div>
           <div>
             <h4 class="panel-h">Across all six language pairs</h4>
             <div class="split-row"><span>Training set</span><b>168,000</b></div>
-            <div class="split-row"><span>Test set 1</span><b>6,000</b></div>
-            <div class="split-row"><span>Test set 2</span><b>6,000</b></div>
+            <div class="split-row" style="align-items:flex-start;"><span>Development set <span class="tl-pill" style="margin-left:6px;">Hidden</span><br><span style="display:block;font-weight:400;font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:4px;">Source given, target hidden — used for validation &amp; tuning.</span></span><b>6,000</b></div>
+            <div class="split-row" style="align-items:flex-start;"><span>Test set <span class="tl-pill" style="margin-left:6px;">Hidden</span><br><span style="display:block;font-weight:400;font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:4px;">Source given, target hidden — used for final evaluation.</span></span><b>6,000</b></div>
             <div class="split-row total"><span>Total corpus</span><b>~180,000</b></div>
           </div>
         </div>
 
         <div class="note-card">
-          <strong>Access policy.</strong> The complete dataset (training and practice test sets) is
-          released only to registered participants. Access to the official blind test set is also restricted to
-          registered teams, who must complete registration and agree to the dataset usage policy before obtaining
-          access.
+          <strong>Access policy.</strong> The complete dataset (training, development, and test sets) is
+          released only to registered participants, who must complete registration and agree to the dataset usage
+          policy before obtaining access. Development and test set targets remain hidden — only source-side sentences
+          are provided for those two splits, used for validation/tuning and final evaluation respectively.
         </div>
 
         <div class="note-card hf-request-card">
-          <strong>Requesting the dataset.</strong> Once registered, the training and practice test sets
+          <strong>Requesting the dataset.</strong> Once registered, the training, development, and test sets
           are distributed per language pair via a Hugging Face dataset request. Click a pair below to request access:
           <ul class="hf-pair-list">
             <li><a href="https://huggingface.co/datasets/ainlpml-iitp/ICON26-COILD-INDIC-MT-Assamese-Bodo" class="hf-link" target="_blank" rel="noopener">Assamese ↔ Bodo ↗</a></li>
