@@ -88,8 +88,21 @@ if (navToggle && navLinks) {
       fillPx = segStart + frac * (segEnd - segStart);
     }
 
+    // The label sits in the text column, so keep it inside the empty gap
+    // between the surrounding milestones rather than over their text.
+    let labelPx = fillPx;
+    if (nowLabel && lastDoneIdx !== -1 && nextIdx !== -1) {
+      const rects = item => Array.from(item.querySelectorAll('.tl-date, .tl-body'), el => el.getBoundingClientRect());
+      const gapTop = Math.max(...rects(items[lastDoneIdx]).map(r => r.bottom)) - trackTop;
+      const gapBottom = Math.min(...rects(items[nextIdx]).map(r => r.top)) - trackTop;
+      const half = nowLabel.offsetHeight / 2;
+      labelPx = gapBottom - gapTop >= 2 * half
+        ? Math.max(gapTop + half, Math.min(gapBottom - half, fillPx))
+        : (gapTop + gapBottom) / 2;
+    }
+
     progress.style.height = fillPx + 'px';
     if (nowDot) nowDot.style.top = fillPx + 'px';
-    if (nowLabel) nowLabel.style.top = fillPx + 'px';
+    if (nowLabel) nowLabel.style.top = labelPx + 'px';
   });
 })();
