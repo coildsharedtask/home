@@ -504,7 +504,7 @@ section.tight { padding: 56px 0; }
 
 .tl-line {
   position: absolute;
-  left: 128px;
+  left: 147px; /* dot centre: 108px date + 20px gap + half of 40px dot column, minus half the line width */
   top: 6px;
   bottom: 6px;
   width: 2px;
@@ -513,7 +513,7 @@ section.tight { padding: 56px 0; }
 
 .tl-progress {
   position: absolute;
-  left: 128px;
+  left: 147px;
   top: 6px;
   width: 2px;
   height: 0;
@@ -587,6 +587,44 @@ section.tight { padding: 56px 0; }
 
 .tl-note { font-weight: 400; color: var(--ink-soft); font-size: 0.88rem; }
 
+/* Revised deadline: new date on the dot's line, original struck through beneath */
+.tl-revised .tl-date ins {
+  display: block;
+  text-decoration: none;
+  color: var(--navy-900);
+  font-weight: 700;
+}
+
+.tl-revised .tl-date del {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  opacity: 0.75;
+  text-decoration-thickness: 1.5px;
+}
+
+.tl-badge {
+  color: var(--gold-600);
+  border: 1px solid var(--gold-500);
+  background: rgba(233, 169, 59, 0.1);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.tl-revision-note {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.join-extended { font-weight: 400; font-size: 0.85em; opacity: 0.8; }
+
 .tl-pill {
   background: var(--gold-500);
   color: var(--navy-900);
@@ -600,7 +638,7 @@ section.tight { padding: 56px 0; }
 
 .tl-now-dot {
   position: absolute;
-  left: 122px;
+  left: 141px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -612,7 +650,7 @@ section.tight { padding: 56px 0; }
 
 .tl-now-label {
   position: absolute;
-  left: 148px;
+  left: 188px; /* aligned with the milestone text column */
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--gold-600);
@@ -838,8 +876,8 @@ footer {
   .org-grid { grid-template-columns: 1fr; }
   .hf-pair-list { grid-template-columns: 1fr 1fr; }
   .tl-date { width: 82px; font-size: 0.74rem; }
-  .tl-line, .tl-progress { left: 102px; }
-  .tl-now-dot { left: 96px; }
-  .tl-now-label { left: 122px; }
+  .tl-line, .tl-progress { left: 121px; }
+  .tl-now-dot { left: 115px; }
+  .tl-now-label { left: 162px; }
   .join { padding: 28px; }
 }
