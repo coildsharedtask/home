@@ -52,6 +52,11 @@ if (navToggle && navLinks) {
     h4.appendChild(pill);
   }
 
+  // Between milestones: open up some room above the next row so the marker
+  // and its label have a clear gap of their own to sit in.
+  const betweenMilestones = !isToday && lastDoneIdx !== -1 && nextIdx !== -1;
+  if (betweenMilestones) items[nextIdx].classList.add('tl-after-now');
+
   let nowDot = null;
   let nowLabel = null;
   if (!isToday) {
@@ -64,11 +69,10 @@ if (navToggle && navLinks) {
     track.appendChild(nowLabel);
   }
 
-  requestAnimationFrame(() => {
+  function place() {
     const trackTop = track.getBoundingClientRect().top;
     const dotCenters = items.map(item => {
-      const dot = item.querySelector('.tl-dot');
-      const r = dot.getBoundingClientRect();
+      const r = item.querySelector('.tl-dot').getBoundingClientRect();
       return (r.top + r.height / 2) - trackTop;
     });
 
@@ -80,29 +84,33 @@ if (navToggle && navLinks) {
     } else if (lastDoneIdx === -1) {
       fillPx = 0;
     } else {
-      const segStart = dotCenters[lastDoneIdx];
-      const segEnd = dotCenters[nextIdx];
-      const dStart = dates[lastDoneIdx].getTime();
-      const dEnd = dates[nextIdx].getTime();
-      const frac = Math.max(0, Math.min(1, (todayTime - dStart) / (dEnd - dStart)));
-      fillPx = segStart + frac * (segEnd - segStart);
-    }
-
-    // The label sits in the text column, so keep it inside the empty gap
-    // between the surrounding milestones rather than over their text.
-    let labelPx = fillPx;
-    if (nowLabel && lastDoneIdx !== -1 && nextIdx !== -1) {
+      // Move through the empty space between the two rows rather than from dot
+      // to dot, so the marker never lands beside a row's own text (e.g. a
+      // revised date's struck-through original) and its label lines up with it.
       const rects = item => Array.from(item.querySelectorAll('.tl-date, .tl-body'), el => el.getBoundingClientRect());
       const gapTop = Math.max(...rects(items[lastDoneIdx]).map(r => r.bottom)) - trackTop;
       const gapBottom = Math.min(...rects(items[nextIdx]).map(r => r.top)) - trackTop;
       const half = nowLabel.offsetHeight / 2;
-      labelPx = gapBottom - gapTop >= 2 * half
-        ? Math.max(gapTop + half, Math.min(gapBottom - half, fillPx))
-        : (gapTop + gapBottom) / 2;
+      const dStart = dates[lastDoneIdx].getTime();
+      const dEnd = dates[nextIdx].getTime();
+      const frac = Math.max(0, Math.min(1, (todayTime - dStart) / (dEnd - dStart)));
+      const lo = gapTop + half;
+      const hi = gapBottom - half;
+      fillPx = hi > lo ? lo + frac * (hi - lo) : (gapTop + gapBottom) / 2;
     }
 
     progress.style.height = fillPx + 'px';
     if (nowDot) nowDot.style.top = fillPx + 'px';
-    if (nowLabel) nowLabel.style.top = labelPx + 'px';
+    if (nowLabel) nowLabel.style.top = fillPx + 'px';
+  }
+
+  // Re-measure once web fonts have loaded and whenever the layout width
+  // changes, since both shift row heights and therefore the dot positions.
+  requestAnimationFrame(place);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+  let resizeFrame = 0;
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(place);
   });
 })();
