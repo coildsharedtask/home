@@ -496,6 +496,18 @@ section.tight { padding: 56px 0; }
 
 .fine-print { font-size: 0.85rem; color: var(--ink-soft); margin: 0; }
 
+.submit-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-bottom: 20px;
+}
+
+.submit-card p { margin: 0; flex: 1 1 320px; }
+.submit-card p a { color: var(--gold-600); font-weight: 600; }
+
 /* ===== Timeline ===== */
 .timeline {
   position: relative;
@@ -636,6 +648,14 @@ section.tight { padding: 56px 0; }
   border-radius: 100px;
 }
 
+.tl-item.tl-after-now { padding-top: 40px; }
+
+.tl-pill-released {
+  background: transparent;
+  color: var(--gold-300);
+  border: 1px solid var(--gold-300);
+}
+
 .tl-now-dot {
   position: absolute;
   left: 141px;
@@ -708,6 +728,7 @@ section.tight { padding: 56px 0; }
 
 .join-step p { color: #fff; margin: 0 0 2px; font-weight: 600; font-size: 0.95rem; }
 .join-step span { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; }
+.join-step span a { color: var(--gold-300); font-weight: 600; }
 
 /* ===== Organizers ===== */
 .org-grid {
