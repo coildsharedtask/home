@@ -650,6 +650,17 @@ section.tight { padding: 56px 0; }
 
 .tl-item.tl-after-now { padding-top: 40px; }
 
+.tl-update {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--gold-500);
+  background: rgba(233, 169, 59, 0.1);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.tl-update strong { color: var(--navy-900); }
+
 .tl-pill-released {
   background: transparent;
   color: var(--gold-300);
